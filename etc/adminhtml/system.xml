@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="alsurmedia" translate="label" sortOrder="401" class="alsurmedia-extensions">
+            <label>Alsurmedia</label>
+        </tab>
+        <section id="limitregions" translate="label comment" sortOrder="50" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Exclude Regions</label>
+            <tab>alsurmedia</tab>
+            <resource>Alsurmedia_ExcludeRegions::configuration</resource>
+            <group id="regions" translate="label comment" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label comment" sortOrder="0" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Select <strong>Yes</strong> to enable the module.]]></comment>
+                </field>
+                <field id="excluded_regions" translate="label comment" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Excluded Regions</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Allregion</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
